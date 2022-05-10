@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import Navbar from './Navbar'
 
 interface Props {
   children: React.ReactNode
@@ -13,7 +14,7 @@ const Layout: NextPage<Props> = ({ children }) => {
         <meta name='description' content='Valorant info page' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {/* <Header /> */}
+      <Navbar />
       <main className='container mx-auto min-h-screen'>{children}</main>
       {/* <Footer /> */}
     </div>

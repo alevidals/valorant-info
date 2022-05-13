@@ -8,14 +8,14 @@ interface Props {
 
 const Layout: NextPage<Props> = ({ children }) => {
   return (
-    <div className='bg-red-200 dark:bg-slate-900'>
+    <div className='bg-red-200 dark:bg-dark'>
       <Head>
         <title>Valorant Info</title>
         <meta name='description' content='Valorant info page' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Navbar />
-      <main className='container mx-auto min-h-screen'>{children}</main>
+      <main className='min-h-screen'>{children}</main>
       {/* <Footer /> */}
     </div>
   )

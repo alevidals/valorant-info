@@ -5,7 +5,16 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/waves.svg')",
+      },
+      colors: {
+        dark: '#101823',
+        valorant: '#ff4654',
+        dark_accent: '#0D131B',
+      },
+    },
   },
   plugins: [],
 }

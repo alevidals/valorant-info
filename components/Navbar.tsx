@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { NextRouter, useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import NavbarLink from './NavBarLink'
 
 // interface Props {
@@ -11,10 +11,32 @@ import NavbarLink from './NavBarLink'
 
 const Navbar: NextPage = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <nav className='bg-white  px-2 sm:px-4 py-2.5 rounded dark:bg-slate-800'>
-      <div className='container mx-auto flex justify-between items-center flex-wrap'>
+    <nav
+      className={`py-2.5 z-30 rounded fixed top-0 right-0 left-0 duration-500 ${
+        isScrolled ? 'bg-dark_accent' : 'bg-transparent'
+      }`}
+    >
+      <div className='custom-container flex justify-between items-center flex-wrap'>
         <Link href='/'>
           <a className='text-3xl'>
             <Image src='/logo.png' alt='logo' width={50} height={50} />
@@ -22,7 +44,7 @@ const Navbar: NextPage = () => {
         </Link>
         <button
           type='button'
-          className='text-slate-400 rounded-lg md:hidden outline-none'
+          className='text-valorant rounded-lg md:hidden outline-none'
           onClick={() => setNavbarOpen(!navbarOpen)}
         >
           <span className='sr-only'>Open main menu</span>

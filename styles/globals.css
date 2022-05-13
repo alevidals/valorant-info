@@ -4,6 +4,10 @@
 
 @layer components {
   .active-link {
-    @apply text-rose-400 font-bold
+    @apply text-valorant font-bold underline underline-offset-4 decoration-2;
+  }
+
+  .custom-container {
+    @apply container mx-auto px-4 sm:px-4;
   }
 }

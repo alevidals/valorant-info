@@ -10,7 +10,12 @@ const AgentSkill: NextPage<Props> = ({ skill }) => {
   return (
     <div key={skill.slot} className='flex'>
       <div className='pr-10 flex-shrink-0'>
-        <Image src={skill.displayIcon} height={50} width={50} />
+        <Image
+          src={skill.displayIcon}
+          height={50}
+          width={50}
+          alt={skill.displayName}
+        />
       </div>
       <div className='dark:text-gray-300'>
         <h2 className='text-xl font-medium uppercase'>{skill.displayName}</h2>

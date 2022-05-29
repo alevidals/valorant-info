@@ -32,13 +32,13 @@ const Navbar: NextPage = () => {
 
   return (
     <nav
-      className={`py-2.5 z-30 rounded fixed top-0 right-0 left-0 duration-500 ${
-        isScrolled ? 'bg-dark_accent' : 'bg-transparent'
+      className={`py-2.5 pb-10 z-30 rounded fixed top-0 right-0 left-0 duration-500 ${
+        isScrolled || navbarOpen ? 'bg-dark_accent' : 'bg-transparent'
       }`}
     >
       <div className='custom-container flex justify-between items-center flex-wrap'>
         <Link href='/'>
-          <a className='text-3xl'>
+          <a className='text-3xl' onClick={() => setNavbarOpen(false)}>
             <Image src='/logo.png' alt='logo' width={50} height={50} />
           </a>
         </Link>
@@ -79,17 +79,17 @@ const Navbar: NextPage = () => {
           }`}
         >
           <ul className='flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:font-medium dark:text-gray-200 space-y-2 md:space-y-0'>
-            <li>
+            <li onClick={() => setNavbarOpen(false)}>
               <NavbarLink href='/' text='Home' active={router.asPath === '/'} />
             </li>
-            <li>
+            <li onClick={() => setNavbarOpen(false)}>
               <NavbarLink
                 href='/agents'
                 text='Agents'
                 active={router.asPath === '/agents'}
               />
             </li>
-            <li>
+            <li onClick={() => setNavbarOpen(false)}>
               <NavbarLink
                 href='/weapons'
                 text='Weapons'

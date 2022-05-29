@@ -21,26 +21,6 @@ const Home: NextPage = () => {
       title: 'weapons',
       description: 'Data about the weapons of the game',
     },
-    {
-      href: '/maps',
-      title: 'maps',
-      description: 'Data about the maps of the game',
-    },
-    {
-      href: '/buddies',
-      title: 'buddies',
-      description: 'Data about the weapons buddies',
-    },
-    {
-      href: '/currencies',
-      title: 'currencies',
-      description: 'Data about the currencies',
-    },
-    {
-      href: '/cards',
-      title: 'cards',
-      description: 'Data about the player cards',
-    },
   ]
 
   return (
@@ -62,7 +42,7 @@ const Home: NextPage = () => {
         <h2 className='uppercase text-3xl font-extrabold underline underline-offset-[15px] decoration-3 text-center'>
           Content
         </h2>
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-5 mt-20'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 mt-20'>
           {cards.map((card) => (
             <Link href={card.href} key={card.href}>
               <a>

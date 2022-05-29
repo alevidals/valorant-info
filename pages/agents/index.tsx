@@ -1,4 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import AgentsGrid from '../../components/AgentsGrid'
 import { AgentData } from '../../interfaces/Agents'
 
@@ -8,7 +9,7 @@ interface Props {
 
 const Agents: NextPage<Props> = ({ agents }) => {
   return (
-    <div className='custom-container min-h-screen py-20'>
+    <div className='custom-container min-h-screen p-nav'>
       <h1 className='uppercase text-4xl font-extrabold text-center dark:text-gray-200'>
         Agents
       </h1>

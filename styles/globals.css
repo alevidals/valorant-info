@@ -10,4 +10,8 @@
   .custom-container {
     @apply container mx-auto px-4 sm:px-4;
   }
+
+  .p-nav {
+    @apply py-20;
+  }
 }

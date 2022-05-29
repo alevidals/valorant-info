@@ -43,14 +43,14 @@ interface Skin {
 export interface Chroma {
   uuid: string
   displayName: string
-  displayIcon: null | string
+  displayIcon: string
   fullRender: string
   swatch: null | string
   streamedVideo: null | string
   assetPath: string
 }
 
-interface Level {
+export interface Level {
   uuid: string
   displayName: null | string
   levelItem: LevelItem | null

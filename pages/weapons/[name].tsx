@@ -107,7 +107,7 @@ const Weapon = ({ weapon, status }: Props) => {
                 </div>
               ) : (
                 <h3 className='dark:text-gray-300 text-xl mb-10'>
-                  This skins haven't chromas
+                  This skins haven&apos;t chromas
                 </h3>
               )}
             </div>
